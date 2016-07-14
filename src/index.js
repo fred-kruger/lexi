@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
+import createHashHistory from 'history/lib/createHashHistory';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute } from 'react-router';
 import configureStore from './store/configureStore';
@@ -11,7 +11,7 @@ import AboutPageContainer from './containers/AboutPageContainer';
 import '../sass/bootstrap.css';
 import '../sass/bootstrap-blog.css';
 
-const history = new createBrowserHistory();
+const history = new createHashHistory();
 const store = configureStore();
 let rootElement = document.getElementById('root');
 
