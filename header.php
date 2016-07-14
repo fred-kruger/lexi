@@ -15,8 +15,10 @@
 
 	<title>Lexi WordPress theme</title>
 
-	<!-- Custom styles for this template -->
-	<link href="<?php get_template_directory_uri(); ?>/dist/style.css" rel="stylesheet"></head>
+<?php
+	wp_enqueue_style('styles', get_template_directory_uri() . '/dist/style.css', false, null, all);
+?>
+
 </head>
 
 <body>
