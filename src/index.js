@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import createHashHistory from 'history/lib/createHashHistory';
 import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import configureStore from './store/configureStore';
 import LexiTheme from './containers/LexiTheme';
 import PostsContainer from './containers/PostsContainer';
@@ -11,13 +10,12 @@ import AboutPageContainer from './containers/AboutPageContainer';
 import '../sass/bootstrap.css';
 import '../sass/bootstrap-blog.css';
 
-const history = new createHashHistory();
 const store = configureStore();
 let rootElement = document.getElementById('root');
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={history}>
+        <Router history={hashHistory}>
             <Route path="/" component={LexiTheme}>
                 <IndexRoute component={PostsContainer} />
                 <Route path=":pageNum" component={PostsContainer} />
