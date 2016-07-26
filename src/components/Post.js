@@ -14,7 +14,7 @@ export default class Post extends Component {
 
         return (
             <div className="blog-post">
-                <h2 className="blog-post-title"><Link to={`/post/${post.id}`} >{post.title.rendered}</Link></h2>
+                <h2 className="blog-post-title"><Link to={`post/${post.id}`} >{post.title.rendered}</Link></h2>
                 <p className="blog-post-meta">{post.date} <a href="#">Mark</a></p>
 
                 <div dangerouslySetInnerHTML={this.createMarkup(post.excerpt.rendered)} />
