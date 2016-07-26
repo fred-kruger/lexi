@@ -1,10 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import { WP_URL } from '../wp-url';
+import { RECEIVE_PAGE, RECEIVE_POSTS, POSTS_PER_PAGE } from '../constants/index.js';
 
-export const RECEIVE_PAGE = 'RECEIVE_PAGE';
-export const RECEIVE_POSTS = 'RECEIVE_POSTS';
-
-const POSTS_PER_PAGE = 10;
 
 function receivePage(pageName, pageData) {
     return {
