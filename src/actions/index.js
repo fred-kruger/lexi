@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import { WP_URL } from '../wp-url';
-import { RECEIVE_PAGE, RECEIVE_POSTS, POSTS_PER_PAGE } from '../constants/index.js';
+import { RECEIVE_PAGE, RECEIVE_POSTS, POSTS_PER_PAGE } from '../constants/AppConstant';
 
 
 function receivePage(pageName, pageData) {

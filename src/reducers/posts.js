@@ -1,4 +1,4 @@
-import { RECEIVE_PAGE, RECEIVE_POSTS, POSTS_PER_PAGE } from '../constants/index.js';
+import { RECEIVE_PAGE, RECEIVE_POSTS, POSTS_PER_PAGE } from '../constants/AppConstant.js';
 
 const defaultState = {
     posts: [],

@@ -6,12 +6,14 @@ import MainNavigation from '../components/MainNavigation';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
+import MainNav from '../containers/MainNavContainer'
 
 export default class LexiTheme extends Component {
     render() {
         return (
             <div>
                 <MainNavigation />
+                <MainNav />
                 <Header />
                 <div className="container">
                     <div className="row">
