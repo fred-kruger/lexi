@@ -1,19 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchCategories } from '../actions/categoryActions';
+import MainNavigation from '../components/MainNavigation';
 
 class MainNavContainer extends Component {
-    buidMainNav(categories){
+
+    componentWillMount() {
+        console.log('component mount');
+        this.props.fetchCategories();
+    }
+
+    buidMainNav(categories) {
         return categories.map((category, index) =>
-             <div key={index}>Category</div>
+            <MainNavigation category={category} key={category.id} />
         );
     }
 
     render() {
-        const categories = this.props.categories; 
+        const categories = this.props.categories;
 
         return (
-            <div>
-                {this.buidMainNav(categories)} 
+            <div className="blog-masthead">
+                <div className="container">
+                    <nav className="nav blog-nav">
+                        {this.buidMainNav(categories) }
+                    </nav>
+                </div>
             </div>
         );
     }
@@ -26,5 +38,6 @@ function mapStateToProps(state) {
 }
 
 export default connect(
-    mapStateToProps
+    mapStateToProps,
+    { fetchCategories }
 )(MainNavContainer);
